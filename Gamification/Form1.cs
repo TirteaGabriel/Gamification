@@ -77,5 +77,12 @@ namespace Gamification
                 this.Show();
             }
         }
+
+        private void button_signin_Click(object sender, EventArgs e)
+        {
+            Sign_In signin = new Sign_In();
+            signin.Show();
+            this.Hide();
+        }
     }
 }
