@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Gamification
 {
-    public partial class Menu : Form
+    public partial class Menu_Admin : Form
     {
-        public Menu()
+        public Menu_Admin()
         {
             InitializeComponent();
         }

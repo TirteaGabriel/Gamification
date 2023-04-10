@@ -38,6 +38,7 @@
             this.button_clear = new System.Windows.Forms.Button();
             this.button_signin = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.checkbxShowPas = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -84,32 +85,35 @@
             // 
             // button_login
             // 
+            this.button_login.BackColor = System.Drawing.Color.CornflowerBlue;
             this.button_login.Location = new System.Drawing.Point(256, 169);
             this.button_login.Name = "button_login";
             this.button_login.Size = new System.Drawing.Size(75, 23);
             this.button_login.TabIndex = 5;
             this.button_login.Text = "Login";
-            this.button_login.UseVisualStyleBackColor = true;
+            this.button_login.UseVisualStyleBackColor = false;
             this.button_login.Click += new System.EventHandler(this.button_login_Click);
             // 
             // button_clear
             // 
+            this.button_clear.BackColor = System.Drawing.Color.LightSteelBlue;
             this.button_clear.Location = new System.Drawing.Point(179, 198);
             this.button_clear.Name = "button_clear";
             this.button_clear.Size = new System.Drawing.Size(126, 23);
             this.button_clear.TabIndex = 6;
             this.button_clear.Text = "Clear";
-            this.button_clear.UseVisualStyleBackColor = true;
+            this.button_clear.UseVisualStyleBackColor = false;
             this.button_clear.Click += new System.EventHandler(this.button_clear_Click);
             // 
             // button_signin
             // 
+            this.button_signin.BackColor = System.Drawing.Color.LightSteelBlue;
             this.button_signin.Location = new System.Drawing.Point(153, 169);
             this.button_signin.Name = "button_signin";
             this.button_signin.Size = new System.Drawing.Size(75, 23);
             this.button_signin.TabIndex = 8;
             this.button_signin.Text = "SIgn In";
-            this.button_signin.UseVisualStyleBackColor = true;
+            this.button_signin.UseVisualStyleBackColor = false;
             this.button_signin.Click += new System.EventHandler(this.button_signin_Click);
             // 
             // button1
@@ -123,12 +127,26 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button_exit_Click);
             // 
+            // checkbxShowPas
+            // 
+            this.checkbxShowPas.AutoSize = true;
+            this.checkbxShowPas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkbxShowPas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkbxShowPas.Location = new System.Drawing.Point(337, 132);
+            this.checkbxShowPas.Name = "checkbxShowPas";
+            this.checkbxShowPas.Size = new System.Drawing.Size(87, 19);
+            this.checkbxShowPas.TabIndex = 10;
+            this.checkbxShowPas.Text = "Arata parola";
+            this.checkbxShowPas.UseVisualStyleBackColor = true;
+            this.checkbxShowPas.CheckedChanged += new System.EventHandler(this.checkbxShowPas_CheckedChanged);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(462, 317);
+            this.Controls.Add(this.checkbxShowPas);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button_signin);
             this.Controls.Add(this.button_clear);
@@ -159,5 +177,6 @@
         private Button button_exit;
         private Button button_signin;
         private Button button1;
+        private CheckBox checkbxShowPas;
     }
 }
