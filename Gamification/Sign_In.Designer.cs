@@ -252,6 +252,7 @@
             this.Controls.Add(this.txt_name);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Sign_In";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sign_In";
             this.Load += new System.EventHandler(this.Sign_In_Load);
             this.ResumeLayout(false);

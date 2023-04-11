@@ -67,38 +67,41 @@ namespace Gamification
                 credits = GameLogic.CheckForCompletion(A, credits, x, y);
                 GameLogic.RandomPlacementsInMatrix(A, x, y, ref squares);
             }
-            MatrixLoad();
-            
-        }
-        private void MatrixLoad()
-        {
-            listBox1.Items.Clear();
-            for (int i = 0; i < A.GetLength(0); i++)
-            {
-                string str = "";
-
-                for (int j = 0; j < A.GetLength(1); j++)
-                {
-                    str += A[i, j] + " ";
-                }
-                listBox1.Items.Add(str);
-                listBox1.Items.Add("");
-            }
             
         }
 
-        private void button_restart_Click(object sender, EventArgs e)
-        {
-            InitializeSquares(5, 5);
-            AppData.CurrentUser.UpdateCredit(credits);
-            Game1 game1 = new Game1();
-            game1.Show();
-            this.Close();
-        }
-
+        Login form1 = new Login();
         private void button_endgame_Click(object sender, EventArgs e)
         {
             AppData.CurrentUser.UpdateCredit(credits);
+            int admin = form1.GetAdminForUser(AppData.CurrentUser.Username);
+            if(admin == 1)
+            {
+                Menu_Admin menu = new Menu_Admin();
+                menu.Show();
+                this.Close();
+            }
+            else
+            {
+                Menu menu = new Menu();
+                menu.Show();
+                this.Close();
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult res;
+            res = MessageBox.Show("Do you want to exit", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (res == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            else
+            {
+                this.Show();
+            }
+
         }
     }
 }

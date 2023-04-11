@@ -78,7 +78,7 @@ namespace Gamification
             }
         }
 
-        private int GetAdminForUser(string username)
+        public int GetAdminForUser(string username)
         {
             string connString = @"Data Source=DESKTOP-3FVN9CH;Initial Catalog=users_database;Integrated Security=True";
             using (SqlConnection conn = new SqlConnection(connString))

@@ -23,5 +23,26 @@ namespace Gamification
             game1.Show();
             this.Close();
         }
+
+        private void button_profil_Click(object sender, EventArgs e)
+        {
+            Profil profil = new Profil();
+            profil.Show();
+            this.Close();
+        }
+
+        private void button_exit_Click(object sender, EventArgs e)
+        {
+            DialogResult res;
+            res = MessageBox.Show("Do you want to exit", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (res == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            else
+            {
+                this.Show();
+            }
+        }
     }
 }

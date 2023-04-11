@@ -28,33 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button_restart = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Game1));
             this.button_endgame = new System.Windows.Forms.Button();
+            this.button_exit = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // button_restart
-            // 
-            this.button_restart.Location = new System.Drawing.Point(680, 12);
-            this.button_restart.Name = "button_restart";
-            this.button_restart.Size = new System.Drawing.Size(75, 23);
-            this.button_restart.TabIndex = 1;
-            this.button_restart.Text = "Restart";
-            this.button_restart.UseVisualStyleBackColor = true;
-            this.button_restart.Click += new System.EventHandler(this.button_restart_Click);
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 15;
-            this.listBox1.Location = new System.Drawing.Point(655, 98);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(208, 304);
-            this.listBox1.TabIndex = 2;
             // 
             // button_endgame
             // 
-            this.button_endgame.Location = new System.Drawing.Point(680, 50);
+            this.button_endgame.Location = new System.Drawing.Point(788, 524);
             this.button_endgame.Name = "button_endgame";
             this.button_endgame.Size = new System.Drawing.Size(75, 23);
             this.button_endgame.TabIndex = 3;
@@ -62,16 +43,28 @@
             this.button_endgame.UseVisualStyleBackColor = true;
             this.button_endgame.Click += new System.EventHandler(this.button_endgame_Click);
             // 
+            // button_exit
+            // 
+            this.button_exit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_exit.BackgroundImage")));
+            this.button_exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_exit.Location = new System.Drawing.Point(831, 12);
+            this.button_exit.Name = "button_exit";
+            this.button_exit.Size = new System.Drawing.Size(32, 30);
+            this.button_exit.TabIndex = 10;
+            this.button_exit.UseVisualStyleBackColor = true;
+            this.button_exit.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Game1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(875, 711);
+            this.Controls.Add(this.button_exit);
             this.Controls.Add(this.button_endgame);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.button_restart);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Game1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Game1";
             this.Load += new System.EventHandler(this.Game1_Load);
             this.ResumeLayout(false);
@@ -79,9 +72,7 @@
         }
 
         #endregion
-
-        private Button button_restart;
-        private ListBox listBox1;
         private Button button_endgame;
+        private Button button_exit;
     }
 }

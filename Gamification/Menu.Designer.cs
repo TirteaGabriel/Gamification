@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.label1 = new System.Windows.Forms.Label();
             this.button_play = new System.Windows.Forms.Button();
-            this.button_credits = new System.Windows.Forms.Button();
-            this.button_bedges = new System.Windows.Forms.Button();
+            this.button_profil = new System.Windows.Forms.Button();
+            this.button_exit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -50,7 +51,7 @@
             this.button_play.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_play.FlatAppearance.BorderSize = 0;
             this.button_play.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button_play.Location = new System.Drawing.Point(198, 174);
+            this.button_play.Location = new System.Drawing.Point(203, 240);
             this.button_play.Name = "button_play";
             this.button_play.Size = new System.Drawing.Size(273, 58);
             this.button_play.TabIndex = 7;
@@ -58,31 +59,30 @@
             this.button_play.UseVisualStyleBackColor = false;
             this.button_play.Click += new System.EventHandler(this.button_play_Click);
             // 
-            // button_credits
+            // button_profil
             // 
-            this.button_credits.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.button_credits.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_credits.FlatAppearance.BorderSize = 0;
-            this.button_credits.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button_credits.Location = new System.Drawing.Point(198, 238);
-            this.button_credits.Name = "button_credits";
-            this.button_credits.Size = new System.Drawing.Size(273, 58);
-            this.button_credits.TabIndex = 7;
-            this.button_credits.Text = "Creditele tale";
-            this.button_credits.UseVisualStyleBackColor = false;
+            this.button_profil.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.button_profil.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_profil.FlatAppearance.BorderSize = 0;
+            this.button_profil.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button_profil.Location = new System.Drawing.Point(203, 304);
+            this.button_profil.Name = "button_profil";
+            this.button_profil.Size = new System.Drawing.Size(273, 58);
+            this.button_profil.TabIndex = 7;
+            this.button_profil.Text = "Profil";
+            this.button_profil.UseVisualStyleBackColor = false;
+            this.button_profil.Click += new System.EventHandler(this.button_profil_Click);
             // 
-            // button_bedges
+            // button_exit
             // 
-            this.button_bedges.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.button_bedges.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_bedges.FlatAppearance.BorderSize = 0;
-            this.button_bedges.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button_bedges.Location = new System.Drawing.Point(198, 302);
-            this.button_bedges.Name = "button_bedges";
-            this.button_bedges.Size = new System.Drawing.Size(273, 58);
-            this.button_bedges.TabIndex = 7;
-            this.button_bedges.Text = "Insignele tale";
-            this.button_bedges.UseVisualStyleBackColor = false;
+            this.button_exit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_exit.BackgroundImage")));
+            this.button_exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_exit.Location = new System.Drawing.Point(631, 12);
+            this.button_exit.Name = "button_exit";
+            this.button_exit.Size = new System.Drawing.Size(32, 30);
+            this.button_exit.TabIndex = 16;
+            this.button_exit.UseVisualStyleBackColor = true;
+            this.button_exit.Click += new System.EventHandler(this.button_exit_Click);
             // 
             // Menu
             // 
@@ -90,11 +90,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(675, 508);
-            this.Controls.Add(this.button_bedges);
-            this.Controls.Add(this.button_credits);
+            this.Controls.Add(this.button_exit);
+            this.Controls.Add(this.button_profil);
             this.Controls.Add(this.button_play);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Menu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -105,7 +107,7 @@
 
         private Label label1;
         private Button button_play;
-        private Button button_credits;
-        private Button button_bedges;
+        private Button button_profil;
+        private Button button_exit;
     }
 }
