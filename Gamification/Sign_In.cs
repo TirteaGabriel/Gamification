@@ -18,8 +18,8 @@ namespace Gamification
             InitializeComponent();
         }
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-3FVN9CH;Initial Catalog=users_database;Integrated Security=True");
-        public int credits = 0;
-        public int admin = 0;
+        //public int credits = 0;
+        //public int admin = 0;
         private void button_exit_Click(object sender, EventArgs e)
         {
             DialogResult res;
@@ -60,7 +60,7 @@ namespace Gamification
             }
             else
             {
-                cmd.CommandText = "insert into Login values('" + txt_username.Text + "','" + txt_name.Text + "', '" + txt_firstname.Text + "', '" + txt_password.Text + "', '" + credits + "', '" + admin + "')";
+                cmd.CommandText = "insert into Login values('" + txt_username.Text + "','" + txt_name.Text + "', '" + txt_firstname.Text + "', '" + txt_password.Text + "', 0, 0)";
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Ai creeat contul cu succes!", "Succes", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 Login login = new Login();

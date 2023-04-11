@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Gamification
 {
@@ -38,6 +39,7 @@ namespace Gamification
             reader.Close();
             connection.Close();
             dataGridView1.DataSource = users;
+            dataGridView1.Columns["Admin"].Visible = false;
         }
 
         Login form1 = new Login();
@@ -69,6 +71,37 @@ namespace Gamification
             else
             {
                 this.Show();
+            }
+        }
+
+        private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            int admin = form1.GetAdminForUser(AppData.CurrentUser.Username);
+            if (admin == 1)
+            {
+                if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+                {
+                    DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                    string username = row.Cells[0].Value.ToString();
+                    int credit = Convert.ToInt32(row.Cells[1].Value);
+
+                    string query = "UPDATE Login SET Credite = @credit WHERE UserName = @username";
+                    using (SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-3FVN9CH;Initial Catalog=users_database;Integrated Security=True"))
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@credit", credit);
+                        command.Parameters.AddWithValue("@username", username);
+                        connection.Open();
+                        command.ExecuteNonQuery();
+                    }
+
+                    //actualizeaza sursa de date pentru DataGridView
+                    SqlCommand selectCommand = new SqlCommand("SELECT UserName, Credite FROM Login ORDER BY Credite DESC", connection);
+                    SqlDataAdapter dataAdapter = new SqlDataAdapter(selectCommand);
+                    DataTable table = new DataTable();
+                    dataAdapter.Fill(table);
+                    dataGridView1.DataSource = table;
+                }
             }
         }
     }

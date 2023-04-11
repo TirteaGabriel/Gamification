@@ -33,6 +33,7 @@
             this.button_play = new System.Windows.Forms.Button();
             this.button_profil = new System.Windows.Forms.Button();
             this.button_exit = new System.Windows.Forms.Button();
+            this.button_leaderboard = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -51,7 +52,7 @@
             this.button_play.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_play.FlatAppearance.BorderSize = 0;
             this.button_play.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button_play.Location = new System.Drawing.Point(203, 240);
+            this.button_play.Location = new System.Drawing.Point(196, 177);
             this.button_play.Name = "button_play";
             this.button_play.Size = new System.Drawing.Size(273, 58);
             this.button_play.TabIndex = 7;
@@ -65,7 +66,7 @@
             this.button_profil.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_profil.FlatAppearance.BorderSize = 0;
             this.button_profil.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button_profil.Location = new System.Drawing.Point(203, 304);
+            this.button_profil.Location = new System.Drawing.Point(196, 241);
             this.button_profil.Name = "button_profil";
             this.button_profil.Size = new System.Drawing.Size(273, 58);
             this.button_profil.TabIndex = 7;
@@ -84,12 +85,27 @@
             this.button_exit.UseVisualStyleBackColor = true;
             this.button_exit.Click += new System.EventHandler(this.button_exit_Click);
             // 
+            // button_leaderboard
+            // 
+            this.button_leaderboard.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.button_leaderboard.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_leaderboard.FlatAppearance.BorderSize = 0;
+            this.button_leaderboard.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button_leaderboard.Location = new System.Drawing.Point(196, 305);
+            this.button_leaderboard.Name = "button_leaderboard";
+            this.button_leaderboard.Size = new System.Drawing.Size(273, 58);
+            this.button_leaderboard.TabIndex = 17;
+            this.button_leaderboard.Text = "Leaderboard";
+            this.button_leaderboard.UseVisualStyleBackColor = false;
+            this.button_leaderboard.Click += new System.EventHandler(this.button_leaderboard_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(675, 508);
+            this.Controls.Add(this.button_leaderboard);
             this.Controls.Add(this.button_exit);
             this.Controls.Add(this.button_profil);
             this.Controls.Add(this.button_play);
@@ -109,5 +125,6 @@
         private Button button_play;
         private Button button_profil;
         private Button button_exit;
+        private Button button_leaderboard;
     }
 }

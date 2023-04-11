@@ -37,7 +37,7 @@ namespace Gamification
                 sda.Fill(dtable);
                 if (dtable.Rows.Count > 0)
                 {
-                    username = txt_password.Text;
+                    username = txt_username.Text;
                     user_password = txt_password.Text;
                     int credits = GetCreditsForUser(username);
                     int admin = GetAdminForUser(username);
@@ -124,7 +124,7 @@ namespace Gamification
                 conn.Open();
 
                 // Interogarea bazei de date pentru a obține valoarea creditului pentru utilizatorul specificat
-                string query = "SELECT Credite FROM Login WHERE Username = @Username";
+                string query = "SELECT Credite FROM Login WHERE UserName = @Username";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Username", username);
                 int credits = (int)cmd.ExecuteScalar();

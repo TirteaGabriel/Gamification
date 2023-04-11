@@ -44,5 +44,12 @@ namespace Gamification
                 this.Show();
             }
         }
+
+        private void button_leaderboard_Click(object sender, EventArgs e)
+        {
+            Leaderboard lead = new Leaderboard();
+            lead.Show();
+            this.Hide();
+        }
     }
 }
